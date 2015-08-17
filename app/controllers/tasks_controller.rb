@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-  before_filter: :get_task, only: [:show, :update, :destroy]
+  before_filter :get_task, only: [:show, :update, :destroy, :edit]
 
   def index
     @tasks = Task.all

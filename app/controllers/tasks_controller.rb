@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
 
+  before_filter: :get_task, only: [:show, :update, :destroy]
+
   def index
     @tasks = Task.all
 
@@ -10,7 +12,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -28,7 +29,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def create
@@ -46,7 +46,6 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
@@ -60,12 +59,17 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
 
     respond_to do |format|
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def get_task
+    @task = Task.find(params[:id])
   end
 end

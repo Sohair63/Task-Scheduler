@@ -16,16 +16,16 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :executable_path %><br />
+    <%= f.text_field :executable_path %>
+  </div>
+  <div class="field">
     <%= f.label :start_time %><br />
     <%= f.datetime_select :start_time %>
   </div>
   <div class="field">
     <%= f.label :end_time %><br />
     <%= f.datetime_select :end_time %>
-  </div>
-  <div class="field">
-    <%= f.label :executable_path %><br />
-    <%= f.text_field :executable_path %>
   </div>
   <div class="actions">
     <%= f.submit %>

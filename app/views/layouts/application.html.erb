@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container-narrow">
+    <hr>
+      <div class="masthead">
+        <h3 class="muted"><%= link_to "TaskScheduler", tasks_path %></h3>
+      </div>
+    <hr />
 
-<%= yield %>
+    <%= yield %>
 
+  </div>
 </body>
 </html>

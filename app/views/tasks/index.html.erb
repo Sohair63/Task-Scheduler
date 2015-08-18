@@ -13,6 +13,7 @@
           <th>Executable path</th>
           <th>Start time</th>
           <th>End time</th>
+          <th>Status</th>
           <th></th>
           <th></th>
           <th></th>
@@ -25,6 +26,7 @@
             <td><%= task.executable_path %></td>
             <td><%= task.start_time %></td>
             <td><%= task.end_time %></td>
+            <td><%= task.status.try(:upcase) %></td>
             <td><%= link_to 'Edit', edit_task_path(task), class: 'btn btn-primary' %></td>
             <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
           </tr>

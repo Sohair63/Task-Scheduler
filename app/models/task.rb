@@ -21,4 +21,23 @@ class Task < ActiveRecord::Base
     event :reset                        do transitions from: [:failed, :completed],      to: :initialised     end
   end
 
+  def self.get_all
+    result = {}
+    tasks = Task.all
+
+    result[:tasks] = tasks.collect do |task|
+      entry = {}
+
+      entry[:name]            = task.name
+      entry[:executable_path] = task.executable_path
+      entry[:start_time]      = task.start_time
+      entry[:end_time]        = task.end_time
+      entry[:status]          = task.status
+
+      entry
+    end
+
+    result
+  end
+
 end

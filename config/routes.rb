@@ -8,6 +8,7 @@ TaskScheduler::Application.routes.draw do
       resources :schedular, only: [] do
         collection do
           get :tasks
+          post :schedule_task
         end
       end
     end

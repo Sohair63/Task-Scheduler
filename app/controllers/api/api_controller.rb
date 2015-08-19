@@ -15,6 +15,11 @@ class Api::ApiController < ApplicationController
     render json: api_response, status: response_code
   end
 
+  def render_api_error(response)
+    response[:status] = 'failure'
+    render_api(response)
+  end
+
   def ensure_has_the_right_headers
     head :unauthorized unless request && request.headers && request.headers['Authorization'] && request.headers['Authorization']==AUTH_TOKEN
   end

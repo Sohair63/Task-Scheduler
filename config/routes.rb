@@ -9,6 +9,7 @@ TaskScheduler::Application.routes.draw do
         collection do
           get :tasks
           post :schedule_task
+          get :task
         end
       end
     end

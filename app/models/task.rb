@@ -80,4 +80,8 @@ class Task < ActiveRecord::Base
     task
   end
 
+  def self.get_task(id)
+    Task.find_by_id(id)
+  end
+
 end

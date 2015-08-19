@@ -9,6 +9,22 @@ class Api::V1::SchedularController < Api::ApiController
     render_api response
   end
 
+  # GET
+  def task
+    task = Task.find_by_id params[:id]
+    return render_api_error error: "INVALID TASK ID" if task.blank?
+
+    response = {
+      name: task.name,
+      executable_path: task.executable_path,
+      start_time: task.start_time.try(:to_date),
+      end_time: task.end_time.try(:to_date),
+      status: task.status
+    }
+
+    render_api response
+  end
+
   # POST
   def schedule_task
     task = Task.create_or_schedual_task(params)

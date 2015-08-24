@@ -74,19 +74,19 @@ Steps to prepare the source code.
 ### You can use POSTMAN (an extension of Google Chrome)
 >> Import API END POINTS using POSTMAN through
 
-  1) the link https://www.getpostman.com/collections/9997030a6d846f50907b
+- the link https://www.getpostman.com/collections/9997030a6d846f50907b
 
 >>  OR
 
-  2) the file "TaskSchedular.json.postman_collection" (find this file in current folder)
+- the file "TaskSchedular.json.postman_collection" (find this file in current folder)
 
 >> Or can use other method to hit API calls with following credentials:
 
-  1) Authorization: 195b4a5bb185ef3f43dc5288b79386be
-    2) GET: To get all tasks: http://localhost:3001/api/v1/schedular/tasks
-    3) POST: To schedule task: http://localhost:3000/api/v1/schedular/schedule_task
-    4) GET: To get all task by ID : http://localhost:3000/api/v1/schedular/task?id=<:id>
-    5) Following Form Data
+- Authorization: 195b4a5bb185ef3f43dc5288b79386be
+- GET: To get all tasks: http://localhost:3001/api/v1/schedular/tasks
+- POST: To schedule task: http://localhost:3000/api/v1/schedular/schedule_task
+- GET: To get all task by ID : http://localhost:3000/api/v1/schedular/task?id=<:id>
+- Following Form Data
 
 ```
 name: Task Name

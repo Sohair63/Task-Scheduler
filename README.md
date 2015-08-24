@@ -61,6 +61,10 @@ Steps to prepare the source code.
     or
     $ rails s
 
+### Start Other Server
+
+    $ rake jobs:work
+
 ### Open following link in browser
 
     http://localhost:3000/
@@ -72,7 +76,7 @@ Steps to prepare the source code.
 
   1) the link https://www.getpostman.com/collections/9997030a6d846f50907b
 
->>  OR  
+>>  OR
 
   2) the file "TaskSchedular.json.postman_collection" (find this file in current folder)
 
@@ -83,11 +87,13 @@ Steps to prepare the source code.
     3) POST: To schedule task: http://localhost:3000/api/v1/schedular/schedule_task
     4) GET: To get all task by ID : http://localhost:3000/api/v1/schedular/task?id=<:id>
     5) Following Form Data
+
 ```
 name: Task Name
 path: Task Path
 run_at: Time in valid ruby formate*
 ```
+
 ### Note the `ruby date formate` should be valid or one of the following
 
     1) 2015-08-19 19:35:46 +0500
